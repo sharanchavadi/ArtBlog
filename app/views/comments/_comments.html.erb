@@ -1,0 +1,21 @@
+<% @article.comments.each do |comment| %>
+       <div id="comment_<%= comment.id%>">
+         <div class="media">
+        <a class="pull-left" href="#">
+            <img class="media-object" src="http://placehold.it/64x64" alt="">
+        </a>
+
+        <% if can? :update, comment %> 
+          <%= link_to "edit", edit_comment_path(comment.id), class: "pull-right" %>
+        <% end %>
+
+        <div class="media-body">
+            <h4 class="media-heading"><%= comment.title %>
+                <small><%= comment.created_at.strftime("%B %d, %Y at %H:%M %p (UTC)") %></small>
+            </h4>
+           <%= comment.body %>
+        </div>
+         </div>  
+         <hr/>
+       <div>
+<% end %>

@@ -1,0 +1,29 @@
+
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+
+   <div class= "col-md-8">
+      <div class="page-header">
+         <h2>Listing Categories</h2>
+      </div>
+
+      <div id="categoryTable"%> 
+         <%= render 'categories' %>
+      </div>
+   </div>
+
+
+   <div class="col-md-4">
+
+      <div class="page-header">
+         <h2> Add Category </h2>
+      </div>
+
+      <div id="errorMsg">
+         <%= render 'form' %>
+      </div>
+
+   </div>
+
+</div>

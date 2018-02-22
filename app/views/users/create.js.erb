@@ -1,0 +1,11 @@
+//Ruby with JQuery
+// var formatHandle = document.getElemetBy.........
+
+<% if @user.valid? %>
+	$('#errorMsg').hide();
+	$('#notice').text("Successfully created user");
+	$('#new_user')[0].reset();
+	$('#userTable').html("<%= escape_javascript(render 'users')%>");
+	<% else %>
+	   $('#errorMsg').html("<%= escape_javascript(render 'errors')%>");
+	<% end %>

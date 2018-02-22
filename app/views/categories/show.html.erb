@@ -1,0 +1,21 @@
+<h2> Article category: <%= @category.name %> </h2>
+
+<% if user_signed_in? && current_user.is_admin %>
+
+<%= link_to "edit", edit_category_path(@category.id) %>
+<%= link_to "destroy", category_path(@category.id), method: :delete, data: {confirm: "are you sure?"} %>
+
+<% end %>
+
+
+<% @category.articles.each do |article| %>
+<h3> <%= article.title %> </h3>
+<ol>
+   <% article.comments.each do |comment| %>
+   <li> <%= link_to comment.title, comment_path(comment.id) %>  </li>
+        <%end%>
+</ol>
+ 
+<% end %>
+
+<%= link_to "Back", categories_path %>
